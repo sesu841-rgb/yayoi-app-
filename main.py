@@ -217,16 +217,8 @@ async def send_report_email(request: EmailRequest):
         # 2. HTML版も追加（これにより「HTMLメール」として認識される）
         msg.add_alternative(styled_html, subtype='html', charset='utf-8')
 
-        # 3. PDF変換を試みる（wkhtmltopdfがインストールされていれば添付）
-        try:
-            pdf_bytes = pdfkit.from_string(styled_html, False)
-            msg.add_attachment(pdf_bytes, maintype='application', subtype='pdf', filename='LifePatternReport.pdf')
-        except Exception as e:
-            # エラー時でも、上記の msg.add_alternative によってHTMLメールとして本文があるため大丈夫
-            print(f"PDF generation failed: {e}. Sending HTML email body only.")
-
-        # メールサーバ経由で送信
-        with smtplib.SMTP(smtp_server, int(smtp_port)) as server:
+        # メールサーバ経由で送信（長時間のフリーズを防ぐためタイムアウトを10秒に設定）
+        with smtplib.SMTP(smtp_server, int(smtp_port), timeout=10) as server:
             server.starttls()
             server.login(smtp_user, smtp_pass)
             server.send_message(msg)
