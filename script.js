@@ -384,9 +384,5 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('save-pdf-btn').addEventListener('click', () => {
             window.print();
         });
-
-        document.getElementById('receive-email-btn').addEventListener('click', () => {
-            emailModal.style.display = 'flex';
-        });
     }
 });
