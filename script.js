@@ -356,6 +356,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="save-buttons">
                     <button id="save-pdf-btn" class="primary-btn" style="width: 100%;">PDFとして保存する</button>
                 </div>
+                <p style="text-align: center; font-size: 0.85rem; color: #666; margin-top: 10px;">
+                    ※印刷画面が開きますので、送信先（プリンター）を「PDFに保存」に変更して保存してください。
+                </p>
             </div>
 
             <div class="report-cta-block no-print">
