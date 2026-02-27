@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>わたしの人生パターンレポート</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="app">
+        <!-- TOP Screen -->
+        <section id="top-screen" class="screen active">
+            <header>
+                <h1>わたしの人生パターンレポート</h1>
+                <p class="subtitle">40年の人生から、くり返している【構造】を読み解く。</p>
+            </header>
+            <main>
+                <div class="fv">
+                    <p class="catchcopy">あなたの人生は、偶然ではありません。</p>
+                    <p class="intro-text">
+                        これまでの選択。<br>
+                        出会ってきた人。<br>
+                        繰り返してきた出来事。<br><br>
+                        そこには、<br>
+                        くり返されている“選び方のクセ”があります。<br><br>
+                        このレポートでは、<br><br>
+                        慰めやポジティブな言葉ではなく、<br><br>
+                        「構造」<br>
+                        「因果」<br>
+                        「繰り返し」<br><br>
+                        を明らかにします。
+                    </p>
+                </div>
+
+                <div class="target-audience">
+                    <h3>こんな方へ</h3>
+                    <ul>
+                        <li>同じ人間関係のトラブルを繰り返している</li>
+                        <li>頑張っているのに報われない感覚がある</li>
+                        <li>なぜあの選択をしたのか、自分でも分からない</li>
+                        <li>自分の無意識のクセを、一度整理したい</li>
+                    </ul>
+                </div>
+
+                <div class="what-ai-does">
+                    <h3>このレポートで行うこと</h3>
+                    <p class="system-intro">
+                        過去を振り返り、<br>
+                        出来事と、そのときの反応を整理します。<br><br>
+                        そこから、
+                    </p>
+                    <ul class="system-points">
+                        <li>繰り返している構造</li>
+                        <li>無意識の選択パターン</li>
+                        <li>支配されやすい関係性</li>
+                        <li>止めるべき連鎖</li>
+                    </ul>
+                    <p class="system-outro">
+                        を抽出します。<br><br>
+                        スピリチュアルや占い的な要素はありません。<br><br>
+                        構造として、読みます。
+                    </p>
+                </div>
+
+                <div class="privacy-note-top">
+                    <p>※入力内容は外部公開されません。</p>
+                    <p>※解析目的以外に使用しません。</p>
+                </div>
+
+                <button id="start-btn" class="primary-btn">▶ 解析を始める</button>
+            </main>
+        </section>
+
+        <!-- Input Form Screen (Step-by-Step) -->
+        <section id="input-screen" class="screen">
+            <header class="sticky-header">
+                <h2>自分史入力</h2>
+                <div class="header-actions">
+                    <button id="save-local-btn" class="secondary-btn">入力データを一時保存</button>
+                </div>
+            </header>
+
+            <main>
+                <div class="instruction-box">
+                    <p>5年ごとに、印象に残っている出来事と、<br>そのときのあなたの反応を書いてください。</p>
+                    <p class="relax-text">難しく考えなくて大丈夫です。<br>思い出せる範囲で構いません。スクロールして自由に書き直せます。</p>
+                </div>
+
+                <div id="form-container">
+                    <!-- JavaScriptでステップごとのフォームを生成 -->
+                </div>
+
+                <div class="step-actions" style="flex-direction: column; gap: 1.5rem;">
+                    <button id="add-age-btn" class="secondary-btn" style="width: 100%;">＋ さらに5年分（年齢）を追加する</button>
+                    <button id="analyze-btn" class="primary-btn" style="width: 100%;">▶ 人生パターンを読む</button>
+                </div>
+
+                <div class="privacy-policy-section">
+                    <h3>プライバシーについて</h3>
+                    <ul>
+                        <li>入力内容は外部に公開されません</li>
+                        <li>第三者へ提供することはありません</li>
+                        <li>解析以外の目的では使用しません</li>
+                        <li>レポート生成後、データ削除も可能です</li>
+                    </ul>
+                    <p class="privacy-relax-text">安心してご入力ください。</p>
+                </div>
+            </main>
+        </section>
+
+        <!-- Loading Screen -->
+        <section id="loading-screen" class="screen">
+            <main class="center-content">
+                <div class="spinner"></div>
+                <p>人生の構造を読み解いています...</p>
+            </main>
+        </section>
+
+        <!-- Report Screen -->
+        <section id="report-screen" class="screen">
+            <header class="no-print">
+                <h2>解析レポート</h2>
+                <div class="header-actions">
+                    <button id="print-btn" class="secondary-btn">PDFとして保存（印刷）</button>
+                    <button id="clear-data-btn" class="danger-btn">入力データを消去する</button>
+                </div>
+            </header>
+
+            <main>
+                <div id="report-content" class="report-box">
+                    <!-- JavaScriptでレポートを流し込む -->
+                </div>
+            </main>
+        </section>
+    </div>
+
+    <!-- Email Modal -->
+    <div id="email-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <button class="modal-close-btn" id="modal-close-btn">&times;</button>
+            <h3 style="border-left: none; padding-left: 0; text-align: center;">レポートをメールで受け取る</h3>
+            <p style="text-align: center; color: #555; margin-bottom: 1.5rem;">入力いただいたメールアドレス宛に、PDF形式のレポートをお送りします。</p>
+            <div class="form-group">
+                <input type="email" id="email-input" placeholder="メールアドレスを入力"
+                    style="width: 100%; border: 1px solid var(--border-color); padding: 12px; border-radius: 4px;">
+            </div>
+            <button id="send-email-btn" class="primary-btn" style="margin-top: 1rem; width: 100%;">送信する</button>
+            <button id="modal-cancel-btn" class="secondary-btn" style="margin-top: 1rem; width: 100%;">後で閉じる</button>
+            <p class="note" style="text-align: center; margin-top: 1rem; font-size: 0.85rem;">※登録は任意です。不要な場合は閉じてください。
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
