@@ -354,8 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="report-save-section no-print">
                 <h3>このレポートを保存しますか？</h3>
                 <div class="save-buttons">
-                    <button id="save-pdf-btn" class="primary-btn" style="width: 100%;">① PDFとして保存する</button>
-                    <button id="receive-email-btn" class="secondary-btn" style="width: 100%;">② メールで受け取る</button>
+                    <button id="save-pdf-btn" class="primary-btn" style="width: 100%;">PDFとして保存する</button>
                 </div>
             </div>
 
